@@ -2,7 +2,7 @@
   <div id="app">
     <div class="backChange" id="main"></div>
     <div class="main-container">
-      <div class="content">
+      <div data-speed="1" class="layer content">
         <div class="bonus-text">
           <h1>300%</h1>
           <h3>WELCOME BONUS</h3>
@@ -17,11 +17,9 @@
         </div>
         <button class="play-btn">PLAY NOW</button>
       </div>
-      <div class="witcher-div">
-        <div></div>
-      </div>
-      <div class="sparks-front"></div>
-      <div class="sparks-back"></div>
+      <div data-speed="3" class="layer witcher-div"></div>
+      <div data-speed="6" class="layer sparks-front"></div>
+      <div data-speed="1" class="layer sparks-back"></div>
       <div class="logo">
         <img src="./assets/logo.png" alt="">
       </div>
@@ -218,17 +216,6 @@ $mainColor: rgb(227, 71, 54);
     @include itemBack(absolute, 1300px, -17%, url("./assets/witcher.png"), 20);
     margin-top: 1%;
     background-size: 775px;
-    div {
-      position: absolute;
-      top: 50px;
-      bottom: 0;
-      width: 40%;
-      margin: 0 auto;
-      /*background-color: #CE5937;*/
-      &:hover {
-        background-color: rgb(158, 4, 8);
-      }
-    }
   }
   .sparks-front {
     @include itemBack(absolute, 1375px, -12.32%, url("./assets/sparks_front.png"), 30);
