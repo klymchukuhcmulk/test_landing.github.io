@@ -7,11 +7,16 @@ Vue.use(VueClipboard)
 Vue.config.productionTip = false
 
 function parallax (event) {
-  this.querySelectorAll('.layer').forEach(layer => {
-    const speed = layer.dataset.speed
-    layer.style.transform = `translate(${speed * event.clientX / 500}px, ${speed * event.clientY / 100}px)`
-    // layer.style.transform = `translateY(-${speed * event.clientY / 100}px)`
-  })
+  if (document.body.offsetWidth > 450) {
+    this.querySelectorAll('.layer').forEach(layer => {
+      const speed = layer.dataset.speed
+      layer.style.transform = `translate(${speed * event.clientX / 500}px, ${speed * event.clientY / 100}px)`
+    })
+  } else {
+    this.querySelectorAll('.layer').forEach(layer => {
+      layer.style.transform = 'translate(0px, 0px)'
+    })
+  }
 }
 document.addEventListener('mousemove', parallax)
 new Vue({

@@ -264,6 +264,9 @@ $mainColor: rgb(227, 71, 54);
 // -------mobile
 @media only screen and (max-width: 500px) {
   .main-container {
+    .layer {
+      transform: none;
+    }
     .content {
       bottom: 0;
       left: 0;
